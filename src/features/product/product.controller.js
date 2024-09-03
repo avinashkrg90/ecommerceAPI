@@ -1,13 +1,10 @@
 export default class ProductController{
-    getAllProducts(req, res){
-
-    }
 
     addProduct(req, res){
 
     }
 
-    rateProduct(req, res){
+    getAllProducts(req, res){
 
     }
 
@@ -17,5 +14,9 @@ export default class ProductController{
 
     filterProdcut(req, res){
         
+    }
+
+    rateProduct(req, res){
+
     }
 }
