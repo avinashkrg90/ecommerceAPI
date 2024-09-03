@@ -16,6 +16,6 @@ export const userSchema = new mongoose.Schema({
     },
     type:{
         type: String,
-        enum: ['Customer', "Seller"]
+        enum: ['customer', "seller"]
     }
 })
