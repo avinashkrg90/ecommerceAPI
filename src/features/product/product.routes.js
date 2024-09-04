@@ -1,6 +1,7 @@
 
 import express from 'express'
 import ProductController from './product.controller.js'
+import jwtAuth from '../../middlewares/jwt.middleware.js'
 
 const router = express.Router()
 
@@ -22,7 +23,7 @@ router.get('/filter', (req, res)=>{
     productController.filterProdcut(req, res)
 })
 
-router.post('/rate', (req, res)=>{
+router.post('/rate', jwtAuth, (req, res)=>{
     productController.rateProduct(req, res)
 })
 

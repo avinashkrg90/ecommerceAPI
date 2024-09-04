@@ -22,6 +22,21 @@ export default class UserRepository{
         }
     }
 
+    async resetPassword(userId, hashedPassword){
+        try{
+            let user = await UserModel.findById(userId)
+            if (user){
+                user.password = hashedPassword;
+                user.save();
+            }else{
+                console.log("no such user")
+            }
+            
+        }catch(err){
+            console.log(err)
+        }
+    }
+
     async findByEmail(email){
         try{
             return await UserModel.findOne({email});

@@ -8,10 +8,6 @@ export const productSchema = new mongoose.Schema({
     description:{
         type:String,
     },
-    category:{
-        type:String,
-        required:true
-    },
     price:{
         type:Number,
         required:true
@@ -19,8 +15,18 @@ export const productSchema = new mongoose.Schema({
     inStock:{
         type:Number,
         required:true
-    }
+    },
+    reviews:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'Review'
+        }
+    ],
+    categories:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'Category'
+        }
+    ]
 
 })
-
-name, description, imageUrl, category, price, sizes, id
