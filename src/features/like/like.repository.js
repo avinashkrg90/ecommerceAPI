@@ -28,4 +28,11 @@ export default class LikeRepository{
             console.log(err)
         }
     }
+
+    async getLikes(type, id){
+        return await LikeModel.find({
+            likeable: id,
+            types: type
+        }).populate('user').populate({path:'likeable', model:type})
+    }
 }

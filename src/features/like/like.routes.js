@@ -11,4 +11,10 @@ router.post('/', jwtAuth, (req, res, next)=>{
     likeController.likeItem(req, res, next);
 })
 
+router.get('/', jwtAuth, (req, res, next)=>{
+    likeController.getlikes(req, res, next);
+})
+
+
+
 export default router;
